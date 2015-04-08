@@ -1,0 +1,114 @@
+######################################################################################
+# DO NOT REMOVE THIS HEADER!
+######################################################################################
+# Dataset for Characterizing Debate Performance via Aggregated Twitter Sentiment
+# by Nicholas Diakopoulos and David A. Shamma
+######################################################################################
+# Citation Info & DOI: 
+# http://dx.doi.org/10.1145/1753326.1753504
+# http://dx.doi.org/10.1145/1631144.1631148
+######################################################################################
+# Dataset licensed under:
+# Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+######################################################################################
+# Ignore lines that start with # to read this file, For example, using R:
+## tweets <- read.delim("debate08_sentiment_tweets.tsv", comment.char="#")
+# or more fully:
+## tweets <- read.delim("debate08_sentiment_tweets.tsv",
+##                      comment.char="#",
+##                      colClasses=c("numeric", "character", "character", "character",
+##                                   "character", "factor", "factor", "factor", "factor",
+##                                   "factor", "factor", "factor", "factor"))
+## tweets <- data.frame(tweet.id=tweets[,1],
+##                      pub.data.GMT=as.POSIXct(tweets[,2],
+##                                              format="%m/%d/%y %I:%M",
+##                                              tz="GMT"),
+##                      tweets[,3:13])
+######################################################################################
+# Rating Codes: 1 = negative, 2 = positive, 3 = mixed, 4 = other
+######################################################################################
+tweet.id	pub.date.GMT	content	author.name	author.nickname	rating.1	rating.2	rating.3	rating.4	rating.5	rating.6	rating.7	rating.8
+936469851	9/27/08 1:01	Watching by myself  #tweetdebate Not drinking :( waiting to start cringing at McCains blunders	drgilpin	Dawn Gilpin	1	1	4					
+936470432	9/27/08 1:02	"@ahg3 @MichDot Yeah, slime was actually my second choice, can't say what the first one was. Okay, we're rolling..."	starweaver		1	1	1					
+936472030	9/27/08 1:03	Preparing to have a heart attack #tweetdebate	kyeung808	Ken Yeung	1	1	1	1		
+936472042	9/27/08 1:03	"no debate moderators under 50, sorry  #tweetdebate"	rebot		1	1	4	1				
+936472907	9/27/08 1:03	@current Now staring at black screen on http://www.current.com/debate  grrrrrrrrrrrrrrr  #current	Karoli	Karoli	1	4	1					
+936683124	9/27/08 2:45	"Last year these debates used to be special, but with all those primary debates, this seems so regular to me #current #debate08"	barefootgypsy	barefootgypsy	3	3	1	
+936683810	9/27/08 2:45	"You don't ""win"" a debate in general unless you knock it out of the park. #current"	dirkmshaw	dirkmshaw	3	3	1	
+936683940	9/27/08 2:46	Does Obama have to be on the attack to win a debate? I thought was he appropriate w/ shots but some think he wasn't tough enough? #debate08	rmonge4surf	Roberto Monge	3	3	1	
+936683958	9/27/08 2:46	#debate08 join the covert radio show forums to talk about the war on terror and security. http://is.gd/3chp	sheeri	sheeri	3	3	4	
+936684363	9/27/08 2:46	"#debate08 Obama 1, McCain 0"	kilbuda	kilbuda	4	3	3	
+936684469	9/27/08 2:46	"#debate08 It did seem like Obama was constant agreeing with McCain.  McCain, however, not so nice."	miguerum	Miguel Rios	3	3	3	
+936684512	9/27/08 2:46	"@POttenhoff ""JM needs to step up policy distinctions."" Obama was agreeing with McCain time and again. #debate08 #current"	FrancesFlynnTho	FrancesFlynnTho	3	1	3	3
+936684677	9/27/08 2:46	"McCain did well in the beginning, but Obama took over once foreign policy kicked in. #debate08"	barbaranixon	Barbara B. Nixon	3	3	2	2
+936684706	9/27/08 2:46	McCain looked better on a narrow set of issues; Obama looked more consistent across the board but didn't win big.  Close. #tweetdebate	Duhh	Duhh	3	3	3		
+936685203	9/27/08 2:46	"#debate08 I think you have to give a slight edge to Obama, if for no other reason than McCain's ""Don't Understand/Reagan"" tired offense"	damnneargenius		2	3	3		
+936685455	9/27/08 2:46	a little brain numb from watching debate. I thought McCain did well at times. Obama-too much agreeing. #debate08	ruthdfw	ruthdfw	3	3	2	3	3
+936685714	9/27/08 2:47	"#debate08 Obama actually talked about the present...mccain just told a bunch stories.  Obama 1, McCain 0"	JonasPK	Paul Jonas	3	3	1		
+936685720	9/27/08 2:47	"#debate08 Well, it's clear Obama won on policy and principle, but McCain may have won on sound bites. Obama was too polite!"	jennyberg	Jenny Bergman	2	3	3		
+936685829	9/27/08 2:47	"Twitter and #current debate very cool, would have been better if I bypassed sucky current signal and went straight to web. All and all A+"	MyMelodie	Melodie Tao	3	3	2		
+936685909	9/27/08 2:47	"Katie, you're beautiful...but Wrong!#current"	blackvoices	Black Voices	3	2	3		
+936686314	9/27/08 2:47	@FakeObama08 Kind of makes you long for the days when President Roosevelt just got on TV and told you what was going on...no sugar coating!	chucksimmins	Chuck Simmins	1	3	3		
+936686729	9/27/08 2:47	"#current Now Guilliani on NBC. He laughs...ha, ha, ha... when Brian Williams says Biden called McCain ""wrong"" about Iraq."	Gipson Bachman		3	3	1	4	
+936686797	9/27/08 2:47	Uhh. Palin didn't give a response to the media when Biden did? That really doesn't look good. #debate08	damnneargenius		1	3	3		
+936687272	9/27/08 2:48	"""Barack Obama doesn't understand"" and ""I agree with John McCain"" were the major repeated lines of the night -Cameron #debate08 #current"	MNDOZA	MNDOZA	3	4	3		
+936687446	9/27/08 2:48	"#debate08 mccain wins on passion. obama's 1, 2, 3ing was stilted. mccain sought to convince, obama was presenting logic."	cgritter		3	3	3		
+936687662	9/27/08 2:48	#debate08 Acknowledging common ground with your opponent is not weakness.	ferret67	ferret67	3	2	3	2	
+936687846	9/27/08 2:48	"Biden will step up to the plate and talk about the debate to Brian Williams, but where's Palin...? Oh, that's right, too cowardly #current"	damnneargenius		3	3	1		
+936688074	9/27/08 2:48	"@Condoulo yes I like those Clinton policies, but you have yet to say what he actually did."	reedracer	Reed Porter	3	3	3		
+936688271	9/27/08 2:48	"How can Obama bring up Palin ?  If he can, without looking mean, he can win #current #debate08"	seoulfully	eyuk	3	2	3	1	
+936688281	9/27/08 2:48	"#current Ooh, the RNC spin: ""Obama says we have to lose in Iraq in order to win in Afghanistan."" according to Guilianni."	ParandimeX	ParandimeX	3	3	4	1	
+936688469	9/27/08 2:48	Loved that fact that Obama said McCain was correct so many times and McCain said Obama was clueless about issues #current #debate08	kudcom	Gil Hearn	3	3	3		
+936688530	9/27/08 2:48	I want to see Obama more aggressive in the next debate. I know he has more of a fight in him. #current	Grumpicus	Erik	3	3	2	1	
+936688674	9/27/08 2:49	"Good point from a FOX News commentator: McCain's looking backward, Obama is looking forward. #current"	elbirdman	elbirdman	3	3	3		
+936688733	9/27/08 2:49	"Post #debate08 Senator Biden appears on NBC, Gov. Palin absent and Rudi Giullianni is filling in for her...strange indeed."	TheDailyDG	The Daily DG	4	3	3		
+936688841	9/27/08 2:49	"Obama said ""John is right"" at least 8 times! McCain on offense,Obama on defense. 21 Factcheck for BHO 16 for McCain #comment #debate08"	NTWhite	NTWhite	3	3	3	2	
+936688870	9/27/08 2:49	"obama wasn't concise enough and should've pushed 3rd bush term more, but he looked like a plausible CiC, which was top priority #tweetdebate"	PATTIwithAn_i	Patti Serrano	2	3	3		
+936688887	9/27/08 2:49	"NPR Commentary: ""A stalemate is a win for Obama as this is McCain's strongest point."" ha.  Hadn't thought of it that way. #debate08"	RobertBluey	Rob Bluey	3	2	3		
+936689423	9/27/08 2:49	"#debate08 #current On a recent falling out w/Ron Paul Barr:""We wanted to provide true focused leadership for the L.P."" ""R.P. did espouse"""	webby2001	Tom Webster	3	3	1		
+936689459	9/27/08 2:49	#debate08 Obama appeared presidential vs McCain who acted liked a cranky old grandpa	LuciferMorning	LuciferMorning	3	3	2		
+936689972	9/27/08 2:50	#debate08 were was the spice? I expected more wrangling. None scripted.	nealmims	nealmims	1	3	3	3	1
+936690299	9/27/08 2:50	"#debate08 also, giulani is miles left (not nearly left enough though) of palin on almost every issue"	ObamaNews	Barack Obama News	3	1	3	3	
+936690478	9/27/08 2:50	#current #debate08 Neither did too great. Now the news bias spins off...Fox: McCain grand slam. CNN seems pretty even for now.	ObamaNews	Barack Obama News	3	1	3	3	
+936690669	9/27/08 2:50	I would say it was 50/50 #debate08	nsaidi	Nicole Saidi	3	3	3		
+936691118	9/27/08 2:50	"notice that McCain didn't mention education, his healthcare plan other than keeping it private and taking care of nations children #current"	suikagirl1	Linda G	2	3	3	1	
+936691323	9/27/08 2:50	": #debate08 Neither of them ""won."" Obama held his own, but was often defensive against McCain's digs. McCain swung from grumpy to bland."	MyMelodie	Melodie Tao	3	1	3	3	
+936691411	9/27/08 2:50	"#winner #current The debate result is much like how the poll results have been: somewhat close, leaning toward whichever guy you like."	tatujae	tatujae	4	3	3		
+936692452	9/27/08 2:51	giuliani lies. Obama will cut corporate loopholes. better plan than raising my taxes.  #debate08	girlboymusic	girlboymusic	3	1	3		
+936693140	9/27/08 2:52	"obama may not have the experience mccain has, he does imho  have a plausible theory of what american foreign policy should be about #current"	zakblogs	Andrea Zak	3	2	3		
+936693262	9/27/08 2:52	@current pavlicko Obama wasn't the one that almost didn't show up.	otc_roy	otc_roy	1	3	3		
+936693892	9/27/08 2:52	"McCain did better than I thought he would tonight, but he did lie several times and his economic policy is ridiculous, now the VPs #debate08"	michaelparks11	Michael Parks	3	3	1		
+936694941	9/27/08 2:53	McCain headed back to DC #current #debate	missouri_gal	missouri_gal	4	3	3		
+936695111	9/27/08 2:53	"One thing that Obama had over McCain is that he turned and tried to engage McCain, McCain avoided all eye contact #current #tweetdebate"	dftbaalli	Allison	1	3	3		
+936695971	9/27/08 2:54	"MCCAIN: How about a spending freeze on everything but defense, veteran affairs and entitlement programs. #DEBATE08"	abbashaiderali	Abbas Haider Ali	3	3	3		
+936696366	9/27/08 2:54	"Most common statments tonight: Obama: ""McCain is right""; McCain: ""Obama doesn't understand"". Points to McCain. #current"	graubart	Barry Graubart	2	3	3		
+936697257	9/27/08 2:55	"The transcripts are up people, let's get the facts straight and not add to the spin #DEBATE08"	DocMara	DocMara	4	3	3		
+936697676	9/27/08 2:55	"#current Both candidates gave very convincing party lines, but chats on Sun Times chat reveals Obama favored...McCain viewed as nervous"	megkroeplin	Meg Kroeplin	3	2	3		
+936697693	9/27/08 2:55	#debate08 OBAMA won!!! McCain looked like a condescending old man tonight!	techgurus	Tech Gurus 	1	3	3		
+936697697	9/27/08 2:55	#current Obama sounds better on the stump than in the debate	frijole	Â¡??o????	2	3	3		
+936472928	9/27/08 1:03	Introducing McCain and Obama. Wait...McCain SHOWED UP! Wow...guess the crisis in Washington is over? #tweetdebate	Nicolas Ward		1	1	1					
+936474032	9/27/08 1:04	#tweetdebate nice how Obama held McCains hand and used his free hand to wave to the audience while keeping McCain from doing so	kellyrfeller	Kelly Feller	1	2	1					
+936475544	9/27/08 1:05	Obama -2 it an occupation not war #tweetdebate	jas_aiken	jas_aiken	1	1	1	3				
+936476318	9/27/08 1:05	"@TDefren  I'm very nervous, yes #tweetdebate"	barbaranixon	Barbara B. Nixon	1	1	4					
+936476394	9/27/08 1:05	#tweetdebate no golden parachutes no padding CEOs - Obama	guiambros	Gui Ambros	1	1	4					
+936477914	9/27/08 1:06	Q for Obama. Does the avg American know what a golden parachute is?  #tweetdebate	AlbertMaruggi	Albert Maruggi	4	1	1					
+936478426	9/27/08 1:06	McCain just gave a cheap plug to Ed Kennedy -1 #tweetdebate #current	themurmish	A. Murmann	1	1	1					
+936478519	9/27/08 1:06	@current current channel reception is continually sucking. Gotta love comcast	TopDogVienna	TopDogVienna	1	1	4					
+936478533	9/27/08 1:06	McCain -3 for Kenndey comment #tweetdebate	kdpaine	Katie Delahaye Paine	3	1	1					
+936478667	9/27/08 1:06	McCain -2 for not knowing Kennedy is home and watching the debate  #tweetdebate	dabloguiman	Dabloguiman	1	1	1		
+936479031	9/27/08 1:07	#tweetdebate McCain starts awkwardly	daveevans	David Evans	1	1	1		
+936479038	9/27/08 1:07	-1 McCain for stalling with faux sympathy #tweetdebate	KennyL	Kenny Lauer	1	2	1		
+936479425	9/27/08 1:07	@andrewa121 I only get OTA HD with my EyeTV 500.	TopDogVienna	TopDogVienna	1	1	4		
+936480648	9/27/08 1:07	McCain is talking about bipartisan negotiation? Uh...no... -1 pt. #tweetdebate #current	ferret67	ferret67	1	1	1		
+936480659	9/27/08 1:07	@current McCain looks so tired!! wayyyy past his bedtime #current	kdpaine	Katie Delahaye Paine	1	1	1		
+936481104	9/27/08 1:08	"dear john, they were sitting down till you came and stirred up a hornets' nest. pulease -4 #tweetdebate"	kdpaine	Katie Delahaye Paine	1	1	1		
+936481174	9/27/08 1:08	@andrewa121 He looks and sounds pretty tired.	PinkOliveFamily	Susan or Sus	1	1	1		
+936481635	9/27/08 1:08	@current Or its the beginning of the end of the beginning of the end.. Sheesh.	xylem	Joel Richman 	1	1	1	4	
+936481733	9/27/08 1:08	McCain -2 for a totally muddled answer on what the republicans are doing #tweetdebate	Duhh	Duhh	1	1	1		
+936482365	9/27/08 1:08	McCain: this is the end of the beginning. huh? #tweetdebate	gwfrink3	George Frink	3	1	1		
+936482757	9/27/08 1:08	McCain -2 gving credit to house republicans #tweetdebate	mhorta	Marco	1	1	1		
+936482834	9/27/08 1:09	-1 McCain all over the place in his answer #tweetdebate	thunderberry	Kevin Rochowski	1	1	1		
+936482946	9/27/08 1:09	"Nice, McLame divides...Republicans uniquely came to fix it. Um, ok. #tweetdebate"	CarriBugbee	Carri Bugbee	1	1	1		
+936482963	9/27/08 1:09	"if ur oldest candidate in history, why start with ""i'm not feeling great"" .. makes u thing ""you're not looking great either #tweetdebate"	lulu_81	lulu81	1	1	1		
+936483317	9/27/08 1:09	"Obama: 1 , McCain 0 : McCain didn't answer the question #tweetdebate"	CarriBugbee	Carri Bugbee	2	1	1	3	3
+936469906	9/27/08 1:01	Current TV is pretty cool. Streaming Twitter feedback #tweetdebate	shashib	Shashi Bellamkonda	2	2	2	

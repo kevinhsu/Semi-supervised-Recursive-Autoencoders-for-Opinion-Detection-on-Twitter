@@ -1,0 +1,3 @@
+{"classifier":"rnn",
+ "classifier_args":{"d": 50, "cat":4, "alpha":0.2,"lambdaW":0.00001,"lambdaCat":0.0000001,"lambdaL":0.0001}
+}
