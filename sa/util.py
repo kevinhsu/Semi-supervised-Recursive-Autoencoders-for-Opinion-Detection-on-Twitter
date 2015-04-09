@@ -1,5 +1,3 @@
-__author__ = 'Yazhe'
-
 import numpy as np
 import warnings
 def sigmoid(x):

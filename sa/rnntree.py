@@ -1,5 +1,3 @@
-__author__ = 'Yazhe'
-
 import numpy as np
 
 class rnntree:

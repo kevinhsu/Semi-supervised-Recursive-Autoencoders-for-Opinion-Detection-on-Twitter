@@ -1,5 +1,3 @@
-__author__ = 'Yazhe'
-
 import numpy as np
 import rnntree
 from util import sigmoid_prime,sigmoid,tanh,norm1tanh_prime,norm,softmax,softmax_prime
