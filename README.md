@@ -1,6 +1,4 @@
-UCL -  Information Retrieval and Data Mining Group Project
-
-Sentiment Analysis on Political Opinion
+# Semi-supervised Recursive Autoencoders for Opinion Detection on Twitter
 ======================================================
 
 Problem description
