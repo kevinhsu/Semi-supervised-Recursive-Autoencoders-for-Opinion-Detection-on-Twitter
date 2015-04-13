@@ -1,6 +1,4 @@
 # Semi-supervised Recursive Autoencoders for Opinion Detection on Twitter
-======================================================
-
 Problem description
 ------------------------------------------------------
 Twitter data from the first 2008 Presidential debate
