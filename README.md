@@ -24,9 +24,7 @@ Other packages you need to install before running the system:
 
 How to use
 ------------------------------------------------------
-1. Download the code from github:
-
-   git clone https://github.com/liyazhe/IRDMProject.git
+1. Download the code from github
 
 2. run the following depending on the usage
 
