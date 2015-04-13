@@ -29,25 +29,32 @@ def getLabel(ratings):
     cnt=[0]*len(labels)
     for rate in ratings:
         cnt[labels.index(rate)]+=1
-        if cnt[labels.index(rate)]>len(labels)/2.0:
+        if cnt[labels.index(rate)]>len(ratings)/2.0:
             return rate
     maxL=max(cnt)
-    # n=0
-    # for c in cnt:
-    #     if c==maxL:
-    #         n+=1
-    # if n==1:
-    return labels[cnt.index(maxL)]
+    randomset=[]
+    for i in range(len(cnt)):
+        c=cnt[i]
+        if c==maxL:
+             randomset.append(labels[i])
+
+    return random.sample(randomset,1)[0]
     # else:
     #     return 3
 
 def iter_corpus(__cached=[]):
     """
-    Returns an iterable of `Datapoint`s with the contents of train.tsv.
+    Returns an iterable of `Datapoint`s with the contents of trainset
     """
     if not __cached:
-        __cached.extend(_iter_data_file("test.tsv")) # file name
+        __cached.extend(_iter_data_file("trainset")) # file name
     return __cached
+
+def iter_test_corpus(tagged=False):
+    """
+    Returns an iterable of `Datapoint`s with the contents of testset
+    """
+    return list(_iter_data_file("testset"))
 
 def make_train_test_split(seed, proportion=0.9):
     """
@@ -78,3 +85,52 @@ def make_train_test_split(seed, proportion=0.9):
         else:
             train.append(x)
     return train, test
+
+def exportToFile(proportion):
+    path = os.path.join(DATA_PATH, 'rawdata.tsv')
+    it = csv.reader(open(path).read().splitlines(), delimiter="\t")
+    row = next(it)  # Drop column names
+
+    while '#' in row[0]: # skip comments at the beginning of the data file
+        row=next(it)
+
+    if " ".join(row[:13]) != "tweet.id pub.date.GMT content author.name author.nickname rating.1 rating.2 rating.3 rating.4 rating.5 rating.6 rating.7 rating.8":
+        raise ValueError("Input file has wrong column names: {}".format(path))
+    data=[]
+    for row in it:
+        data.append(row)
+        #ratings=row[5:]
+        #data=row[:5]
+        #data.append(getLabel(ratings))
+        #yield Datapoint(*data)
+    #ids=range(len(data))
+    N = range(len(data))
+    if N == 0:
+        N += 1
+    rng = random.Random('fighter')
+    rng.shuffle(N)
+    test_ids = N[int(proportion*len(data)):]
+    train = []
+    test = []
+    for i in range(len(data)):
+        if i in test_ids:
+            test.append(data[i])
+        else:
+            train.append(data[i])
+   # (train,test)=make_train_test_split(seed='fighter',proportion=0.7)
+    fieldnames=['tweet.id','pub.date.GMT','content','author.name','author.nickname','rating.1','rating.2','rating.3','rating.4','rating.5','rating.6','rating.7','rating.8']
+    with open('./data/trainset','wb') as f1:
+        wr=csv.writer(f1,delimiter='\t')
+        wr.writerow(fieldnames)
+        for datapoint in train:
+            wr.writerow(datapoint)
+
+    with open('./data/testset','wb') as f2:
+        wr=csv.writer(f2,delimiter='\t')
+        wr.writerow(fieldnames)
+        for datapoint in test:
+            wr.writerow(datapoint)
+
+    print 'finish export!'
+
+#exportToFile(proportion=0.7)

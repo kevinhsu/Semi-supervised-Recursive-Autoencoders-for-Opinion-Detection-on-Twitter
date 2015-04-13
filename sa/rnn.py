@@ -15,7 +15,7 @@ class RNN:
     alpha: parameter that balancing the reconstruction cost and labelling cost
     lambdas: degree of regularization
     '''
-    def __init__(self, d,cat,vocab,alpha,words_vectors,lambdaW,lambdaCat,lambdaL):
+    def __init__(self, d,cat,vocab,alpha,words_vectors,lambdaW,lambdaCat,lambdaL,iter):
         # initialse parameters to be uniform distribution [-r,r]
         # where r is a small number 0.01
         r=np.sqrt(6)/np.sqrt(2*d+1)
@@ -48,6 +48,7 @@ class RNN:
         self.lambdaCat=lambdaCat
         self.lambdaL=lambdaL
         self.postClassifier=LogisticRegression(penalty='l2',multi_class='multinomial',C=10**6,solver='lbfgs')
+        self.iter=iter
 
     def combineParams(self):
         d=self.d
@@ -382,7 +383,7 @@ class RNN:
         freq=freq/sum(freq)
 
         #res=fmin_l_bfgs_b(func=self.RAECost,x0=self.combineParams(),args=(X,y,freq),approx_grad=False,disp=1)
-        res=minimize(fun=self.RAECost,x0=self.combineParams(),args=(X,y,freq),method='L-BFGS-B',jac=True,options = {'maxiter' :70,'disp':True})
+        res=minimize(fun=self.RAECost,x0=self.combineParams(),args=(X,y,freq),method='L-BFGS-B',jac=True,options = {'maxiter' :self.iter,'disp':True})
         theta=res.x
         self.theta=theta
         (self.W1,self.W2,self.W3,self.W4,self.Wlab,self.b1,self.b2,self.b3,self.blab,self.WL)=self.getParams(theta)

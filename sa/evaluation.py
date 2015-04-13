@@ -31,7 +31,7 @@ def analyse(factory):
 
     labels=['neg','pos','mix','other']
     counter=[]
-    #polary=[0.0]*predictor.vocab
+
     for i in range(len(set(y))):
         counter.append([0.0]*len(predictor.vocabulary))
 
@@ -39,10 +39,7 @@ def analyse(factory):
         x=X[i]
         label=y[i]
         for w in x:
-            if w==76:
-                stop=1
             counter[label-1][w]+=1.0
-            #polary[w]=polary[w]+(label-polary[w])/counter[w]
 
     counter=np.array(counter)
     cl=[]
@@ -65,6 +62,8 @@ def visualise(v,vocabulary,lb):
     labels=['neg','pos','mix','other']
     x=[a[0] for a in v]
     y=[a[1] for a in v]
+
+    # draw
     plt.scatter(x,y,c=cl)
     for label, a, b in zip(vocabulary, x, y):
         plt.annotate(
@@ -72,11 +71,14 @@ def visualise(v,vocabulary,lb):
             xy = (a, b), xytext = (-5, 5),
             textcoords = 'offset points', ha = 'right', va = 'bottom',
             bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.25),size=10)
-        # arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0')
     blue_patch = mpatches.Patch(color='blue', label='neg')
     yellow_patch = mpatches.Patch(color='yellow', label='pos')
     red_patch = mpatches.Patch(color='red', label='mix')
     green_patch = mpatches.Patch(color='green', label='others')
     plt.legend([blue_patch,yellow_patch,red_patch,green_patch],labels)
     plt.show()
+
+    # print to console
+    for i in range(len(x)):
+        print str(x[i])+","+str(y[i])+',"'+str(vocabulary[i])+'",'+str(lb[i])
 

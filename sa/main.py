@@ -1,9 +1,7 @@
 """
-Run a 10-fold cross validation evaluation given by a json
-configuration file.
+train and test set
 """
 import time
-
 
 def fix_json_dict(config):
     new = {}
@@ -24,56 +22,26 @@ def fix_json_dict(config):
     return new
 
 
-class PrintPartialCV:
-    def __init__(self):
-        self.last = time.time()
-        self.i = 0
-
-    def report(self, score):
-        new = time.time()
-        self.i += 1
-        print("individual {}-th fold score={}% took {} seconds".format(self.i, score * 100, new - self.last))
-        self.last = new
-
-
 if __name__ == "__main__":
     import argparse
     import json
+    import csv
+    import sys
 
-    from evaluation import cross_validation,analyse
+    from corpus import iter_corpus, iter_test_corpus
     from predictor import PhraseSentimentPredictor
-
-    # get vocabulary
-    from corpus import iter_corpus
-    import csv,os
-    from transformations import ExtractText
-
-    if not os.path.exists('./data/vocabulary'):
-        datapoints=list(iter_corpus())
-        vocabulary=set()
-        et=ExtractText()
-        X=et.transform(datapoints)
-        for datap in X:
-            for w in datap.split():
-                vocabulary.add(w)
-        vocabulary=list(vocabulary)
-        vocabulary.sort()
-        with open('./data/vocabulary','wb') as f:
-            wr=csv.writer(f)
-            for voc in vocabulary:
-                wr.writerow([voc])
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("filename")
     config = parser.parse_args()
     config = json.load(open(config.filename))
 
-
-    factory = lambda: PhraseSentimentPredictor(**config)
-    factory()  # Run once to check config is ok
-
-    report = PrintPartialCV()
-    #analyse(factory)
-    result = cross_validation(factory, seed="robot rock", K=5,callback=report.report)
-
-    print("5-fold cross validation score {}%".format(result * 100))
+    start=time.time()
+    predictor = PhraseSentimentPredictor(**config)
+    predictor.fit(list(iter_corpus()))
+    print "fitting takes "+str(time.time()-start)
+    test = list(iter_test_corpus())
+    #prediction = predictor.predict(test)
+    score = predictor.score(test,'test')
+    print("test score {}%".format(score * 100))
+    print 'programme finished!'

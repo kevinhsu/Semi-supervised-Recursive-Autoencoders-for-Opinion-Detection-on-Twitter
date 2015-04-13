@@ -104,7 +104,7 @@ class PhraseSentimentPredictor:
 
         # Build classifier and put everything togheter
         if classifier_args is None:
-            classifier_args = {'lambdaL': 0.0001, 'd': 50, 'cat': 4, 'lambdaCat': 1e-07, 'alpha': 0.2, 'lambdaW': 1e-05}
+            classifier_args = {'lambdaL': 0.0001, 'd': 50, 'cat': 4, 'lambdaCat': 1e-07, 'alpha': 0.2, 'lambdaW': 1e-05,'iter':70}
         if 'd' in classifier_args:
             d=classifier_args['d']
         else:
